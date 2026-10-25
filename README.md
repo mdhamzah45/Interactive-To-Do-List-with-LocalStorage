@@ -1,6 +1,14 @@
-# Personal Portfolio Landing Page
+# Interactive To-Do List
 
-This project is a one-page portfolio website built with semantic HTML and responsive CSS.
+This project is a simple to-do app built with HTML, CSS, and JavaScript.
+
+## Features
+
+- Add tasks with a text input and submit button
+- Mark tasks as complete with a checkbox
+- Delete tasks from the list
+- Save and reload tasks using `localStorage`
+- Rebuild the list from a single source of truth in JavaScript
 
 ## How to view locally
 
@@ -12,7 +20,6 @@ python -m http.server 8000
 
 Then open http://localhost:8000 in your browser.
 
-## Files
+## Data persistence
 
-- `index.html` – page structure and content
-- `styles.css` – layout, colors, and responsive design
+The app stores the task array in `localStorage` using `JSON.stringify()`, and loads it back with `JSON.parse()` when the page refreshes. This keeps tasks available after a page reload.
