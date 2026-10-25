@@ -1,14 +1,14 @@
-# Interactive To-Do List
+# Responsive Product Pricing Cards
 
-This project is a simple to-do app built with HTML, CSS, and JavaScript.
+This project is a three-plan pricing section with a monthly/yearly billing toggle, a highlighted popular plan, and card hover effects.
 
 ## Features
 
-- Add tasks with a text input and submit button
-- Mark tasks as complete with a checkbox
-- Delete tasks from the list
-- Save and reload tasks using `localStorage`
-- Rebuild the list from a single source of truth in JavaScript
+- Three responsive pricing cards
+- Monthly/yearly billing switch
+- Highlighted "Popular" plan
+- Smooth transitions and hover effects
+- Call-to-action buttons for each plan
 
 ## How to view locally
 
@@ -20,6 +20,6 @@ python -m http.server 8000
 
 Then open http://localhost:8000 in your browser.
 
-## Data persistence
+## JavaScript toggle behavior
 
-The app stores the task array in `localStorage` using `JSON.stringify()`, and loads it back with `JSON.parse()` when the page refreshes. This keeps tasks available after a page reload.
+The billing switch updates the displayed prices by reading each card's data attributes and switching between monthly and yearly values. This keeps the pricing data in HTML attributes instead of repeating numbers in the script.

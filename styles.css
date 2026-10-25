@@ -1,16 +1,16 @@
 :root {
   --bg: #f3f6ff;
-  --bg-dark: #e7efff;
+  --bg-strong: #e3ebff;
   --panel: #ffffff;
-  --panel-soft: #eef4ff;
+  --panel-soft: #f5f7ff;
   --primary: #4f46e5;
-  --primary-dark: #3730a3;
-  --text: #172033;
-  --muted: #60708a;
-  --border: rgba(23, 32, 51, 0.09);
-  --success: #16a34a;
-  --danger: #ef4444;
-  --shadow: 0 18px 35px rgba(79, 70, 229, 0.12);
+  --primary-dark: #312e81;
+  --accent: #eef2ff;
+  --text: #111827;
+  --muted: #5b6475;
+  --border: rgba(17, 24, 39, 0.08);
+  --shadow: 0 20px 50px rgba(79, 70, 229, 0.12);
+  --success: #10b981;
 }
 
 * {
@@ -25,172 +25,236 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: "Inter", sans-serif;
-  background: linear-gradient(135deg, var(--bg) 0%, var(--bg-dark) 100%);
+  background: linear-gradient(135deg, var(--bg) 0%, var(--bg-strong) 100%);
   color: var(--text);
 }
 
-button,
-input {
-  font: inherit;
-}
-
 button {
+  font: inherit;
   cursor: pointer;
 }
 
-.app-shell {
+.pricing-page {
   min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.25rem;
 }
 
-.todo-card {
-  width: min(100%, 34rem);
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--border);
-  border-radius: 1.5rem;
-  box-shadow: var(--shadow);
-  padding: 2rem;
+.pricing-section {
+  width: min(1120px, 100%);
 }
 
-.todo-header {
-  margin-bottom: 1.5rem;
+.pricing-header {
+  text-align: center;
+  max-width: 42rem;
+  margin: 0 auto 1.5rem;
 }
 
 .eyebrow {
-  margin: 0 0 0.5rem;
-  font-size: 0.72rem;
+  margin: 0 0 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--primary-dark);
 }
 
 h1 {
   margin: 0;
-  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-size: clamp(2.3rem, 4vw, 4rem);
   line-height: 1.1;
 }
 
-.todo-form {
-  display: flex;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-}
-
-.todo-form input {
-  flex: 1;
-  min-width: 0;
-  padding: 0.9rem 1rem;
+.billing-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0 auto 2.5rem;
+  padding: 0.4rem;
+  background: rgba(255, 255, 255, 0.75);
   border: 1px solid var(--border);
-  border-radius: 0.9rem;
-  background: var(--panel-soft);
-  color: var(--text);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(17, 24, 39, 0.04);
+  display: flex;
+  width: fit-content;
 }
 
-.todo-form input:focus {
-  outline: none;
-  border-color: rgba(79, 70, 229, 0.5);
-  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12);
-}
-
-.todo-form button {
+.toggle-btn {
   border: none;
-  border-radius: 0.9rem;
+  background: transparent;
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 0.8rem 1.4rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.toggle-btn.active {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.24);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.plan-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.plan-card:hover,
+.plan-card:focus-within {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 45px rgba(79, 70, 229, 0.15);
+}
+
+.plan-card.popular {
+  background: linear-gradient(180deg, #f8f8ff 0%, #eef2ff 100%);
+  border-color: rgba(79, 70, 229, 0.2);
+  transform: scale(1.02);
+}
+
+.badge {
+  position: absolute;
+  top: -0.9rem;
+  right: 1.5rem;
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: #fff;
+  border-radius: 999px;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  padding: 0.9rem 1.2rem;
-  transition: transform 0.2s ease;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-.todo-form button:hover,
-.todo-form button:focus-visible {
-  transform: translateY(-1px);
+.plan-header {
+  margin-bottom: 1.25rem;
 }
 
-.todo-list {
-  list-style: none;
+.plan-header h2 {
   margin: 0;
+  font-size: 1.65rem;
+}
+
+.plan-subtitle {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+}
+
+.price-block {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.currency,
+.billing-label {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.currency {
+  font-size: 1.15rem;
+  padding-bottom: 0.6rem;
+}
+
+.price-value {
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.billing-label {
+  padding-bottom: 0.65rem;
+}
+
+.discount-note {
+  margin: 0 0 1.25rem;
+  color: var(--primary-dark);
+  font-weight: 600;
+  min-height: 1.3em;
+}
+
+.feature-list {
+  list-style: none;
   padding: 0;
+  margin: 0 0 1.5rem;
   display: grid;
   gap: 0.8rem;
-}
-
-.todo-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  background: var(--panel-soft);
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-  padding: 0.75rem 0.85rem;
-}
-
-.task-main {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  flex: 1;
-  min-width: 0;
-}
-
-.task-main input[type="checkbox"] {
-  width: 1.1rem;
-  height: 1.1rem;
-  accent-color: var(--success);
-}
-
-.task-text {
-  word-break: break-word;
-  color: var(--text);
-}
-
-.task-text.completed {
-  text-decoration: line-through;
   color: var(--muted);
 }
 
-.delete-btn {
-  border: none;
-  background: rgba(239, 68, 68, 0.12);
-  color: var(--danger);
-  border-radius: 0.7rem;
-  padding: 0.45rem 0.7rem;
+.feature-list li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.feature-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--success);
   font-weight: 700;
 }
 
-.empty-state {
-  margin: 1rem 0 0;
-  color: var(--muted);
-  text-align: center;
+.plan-button {
+  margin-top: auto;
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  background: #fff;
+  color: var(--text);
+  border-radius: 0.9rem;
+  padding: 0.95rem 1rem;
+  font-weight: 700;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+.plan-button:hover,
+.plan-button:focus-visible {
+  transform: translateY(-2px);
 }
 
-@media (max-width: 480px) {
-  .todo-card {
-    padding: 1.4rem;
+.plan-button.primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 16px 30px rgba(79, 70, 229, 0.24);
+}
+
+@media (max-width: 860px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
   }
 
-  .todo-form {
-    flex-direction: column;
+  .plan-card.popular {
+    transform: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .pricing-page {
+    padding: 3rem 1rem;
   }
 
-  .todo-item {
-    align-items: flex-start;
+  .billing-toggle {
+    width: 100%;
+  }
+
+  .toggle-btn {
+    flex: 1;
   }
 }
