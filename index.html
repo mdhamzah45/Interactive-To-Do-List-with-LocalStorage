@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Alex Jordan personal portfolio landing page featuring skills, projects, and contact links."
+    />
+    <title>Alex Jordan | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="logo" href="#home" aria-label="Alex Jordan home">AJ</a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero container" id="about">
+        <div class="hero__content">
+          <p class="eyebrow">Frontend Developer & UI Designer</p>
+          <h1>Hi, I’m Alex Jordan — I build experiences people enjoy using.</h1>
+          <p class="intro-text">
+            I design and develop thoughtful digital interfaces that balance clarity,
+            speed, and personality. I turn complex ideas into simple, beautiful,
+            user-friendly products.
+          </p>
+
+          <div class="cta-group">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="#contact">Let’s Talk</a>
+          </div>
+
+          <ul class="social-links" aria-label="Social media links">
+            <li><a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a></li>
+            <li><a href="https://dribbble.com" target="_blank" rel="noreferrer">Dribbble</a></li>
+          </ul>
+        </div>
+
+        <aside class="hero__card" aria-label="Profile summary">
+          <div class="profile-badge">Available for freelance work</div>
+          <div class="mini-stat">
+            <span class="value">4+</span>
+            <span class="label">Years building digital products</span>
+          </div>
+          <div class="mini-stat">
+            <span class="value">18</span>
+            <span class="label">Projects shipped</span>
+          </div>
+          <div class="mini-stat">
+            <span class="value">96%</span>
+            <span class="label">Client satisfaction</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="skills section" id="skills">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">My toolkit</p>
+            <h2>Skills</h2>
+          </div>
+
+          <div class="skills-grid">
+            <article class="skill-card">
+              <h3>Frontend</h3>
+              <p>HTML, CSS, JavaScript, responsive UI development, accessible components.</p>
+            </article>
+            <article class="skill-card">
+              <h3>Design</h3>
+              <p>Wireframing, visual hierarchy, design systems, user-focused interface design.</p>
+            </article>
+            <article class="skill-card">
+              <h3>Strategy</h3>
+              <p>Product thinking, user research, content structure, and thoughtful iteration.</p>
+            </article>
+            <article class="skill-card">
+              <h3>Workflow</h3>
+              <p>Figma, GitHub, task planning, prototyping, and collaborative handoff.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects section" id="projects">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Selected work</p>
+            <h2>Projects</h2>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="project-visual visual-one" aria-hidden="true"></div>
+              <div class="project-body">
+                <span class="tag">SaaS</span>
+                <h3>Northstar Analytics</h3>
+                <p>
+                  Designed and built a marketing dashboard that simplified KPI tracking for teams.
+                </p>
+                <a href="#contact">View case study</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-visual visual-two" aria-hidden="true"></div>
+              <div class="project-body">
+                <span class="tag">E-commerce</span>
+                <h3>Bloom & Co.</h3>
+                <p>
+                  Refreshed an online storefront to improve product discovery and conversion flow.
+                </p>
+                <a href="#contact">View case study</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-visual visual-three" aria-hidden="true"></div>
+              <div class="project-body">
+                <span class="tag">Portfolio</span>
+                <h3>Studio Luma</h3>
+                <p>
+                  Created a storytelling portfolio for a creative consultancy with a premium brand feel.
+                </p>
+                <a href="#contact">View case study</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section" id="contact">
+        <div class="container contact-box">
+          <div>
+            <p class="eyebrow">Let’s build something meaningful</p>
+            <h2>Ready to turn ideas into polished experiences?</h2>
+          </div>
+          <div class="contact-links">
+            <a href="mailto:alex@example.com">alex@example.com</a>
+            <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© 2026 Alex Jordan</p>
+        <a href="#home">Back to top</a>
+      </div>
+    </footer>
+  </body>
+</html>
